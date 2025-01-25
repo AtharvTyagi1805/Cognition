@@ -5,9 +5,8 @@ import imagess1 from "../assets/wowhat1.png";
 import imagess2 from "../assets/wowhat2.png";
 import imagess3 from "../assets/wowhat3.png";
 import imagess4 from "../assets/wowhat4.png";
-import PrizesLayout from "./PrizesLayout";
-import SponsorLayout from "./SponsorLayout";
-import WhyParticipateLayout from "./WhyParticipateLayout/WhyParticipateLayout";
+import Event from "./Event";
+import Navbar from "./Navbar";
 
 const images = [imagess1, imagess2, imagess3, imagess4];
 
@@ -50,33 +49,33 @@ const Header = () => {
     return () => clearInterval(interval);
   }, []);
   //   snowfall animation
-  useEffect(() => {
-    createSnowflakes();
-  }, []);
+  // useEffect(() => {
+  //   createSnowflakes();
+  // }, []);
 
-  const createSnowflakes = () => {
-    const container = document.querySelector(".snow-container");
-    const numSnowflakes = 50;
+  // const createSnowflakes = () => {
+  //   const container = document.querySelector(".snow-container");
+  //   const numSnowflakes = 50;
 
-    for (let i = 0; i < numSnowflakes; i++) {
-      const snowflake = document.createElement("div");
-      snowflake.classList.add("snowflake");
+  //   for (let i = 0; i < numSnowflakes; i++) {
+  //     const snowflake = document.createElement("div");
+  //     snowflake.classList.add("snowflake");
 
-      snowflake.style.left = Math.random() * 100 + "%";
-      snowflake.style.animationDuration = Math.random() * 5 + 10 + "s";
-      snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
-      snowflake.style.opacity = Math.random() * 0.5 + 0.5;
-      snowflake.style.animationDelay = Math.random() * 5 + "s";
+  //     snowflake.style.left = Math.random() * 100 + "%";
+  //     snowflake.style.animationDuration = Math.random() * 5 + 10 + "s";
+  //     snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
+  //     snowflake.style.opacity = Math.random() * 0.5 + 0.5;
+  //     snowflake.style.animationDelay = Math.random() * 5 + "s";
 
-      snowflake.innerHTML = "❄";
-      container.appendChild(snowflake);
-    }
-  };
+  //     snowflake.innerHTML = "❄";
+  //     container.appendChild(snowflake);
+  //   }
+  // };
 
   return (
     <div className="relative text-white min-h-screen overflow-hidden">
       {/* header */}
-      <header className="flex flex-wrap justify-between items-center relative z-10">
+      {/* <header className="flex flex-wrap justify-between items-center relative z-10">
         <img src={logo} alt="Logo" className="h-12 mb-4 md:mb-0" />
         <nav className="flex flex-wrap space-x-4 md:space-x-8">
           <a href="#home" className="hover:text-red-500 text-sm sm:text-base">
@@ -98,7 +97,8 @@ const Header = () => {
             Join Us
           </button>
         </nav>
-      </header>
+      </header> */}
+      <Navbar />
 
       <main className="mt-16 relative z-10">
         <section className="text-center px-4">
@@ -109,13 +109,14 @@ const Header = () => {
           >
             DISCOVER DESIGN DEVELOP
           </h1>
+          <Event />
           {/* banner left half and right half */}
-          <div
+          {/* <div
             className="relative w-full h-screen bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
-          >
-            {/* left half */}
-            <div className="flex flex-wrap h-full">
+          >  */}
+          {/* left half */}
+          {/* <div className="flex flex-wrap h-full">
               <div className="w-full md:w-1/2 flex flex-col justify-center pl-4 pr-4 md:pl-12 md:pr-6 text-left">
                 <h2 className="text-3xl md:text-5xl font-extrabold">
                   HACKATHON NAME
@@ -128,18 +129,18 @@ const Header = () => {
                 <button className="mt-8 inline-block bg-white text-red-600 hover:bg-gradient-to-r hover:from-red-500 hover:to-red-800 hover:text-white px-3 py-1 rounded-lg text-sm md:text-lg font-bold transition-colors duration-500 hover:shadow-lg">
                   Register Now
                 </button>
-              </div>
+              </div> */}
 
-              {/* right half */}
-              <div className="w-full md:w-1/2 flex items-center justify-center mt-8 md:mt-0">
+          {/* right half */}
+          {/* <div className="w-full md:w-1/2 flex items-center justify-center mt-8 md:mt-0">
                 <img
                   src={images[currentImage]}
                   alt={`Image ${currentImage + 1}`}
                   className="object-contain w-1/2 h-auto max-w-sm md:max-w-full transition-opacity duration-500 ease-in-out"
                 />
-              </div>
-            </div>
-          </div>
+              </div> */}
+          {/* </div> */}
+          {/* </div> */}
         </section>
         {/* widget */}
         <section className="mt-16 px-4">
@@ -176,9 +177,6 @@ const Header = () => {
           </div>
         </section>
       </main>
-      <WhyParticipateLayout />
-      <PrizesLayout />
-      <SponsorLayout />
     </div>
   );
 };

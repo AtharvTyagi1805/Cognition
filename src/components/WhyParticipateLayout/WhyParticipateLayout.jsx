@@ -1,4 +1,4 @@
-import WhyParticipateCardLayout from "./WhyParticipateCardLayout";
+import WhyParticipateCardLayout from "../WhyParticipateLayout/WhyParticipateCardLayout";
 
 const WhyParticipateLayout = () => {
   const whyParticipateCardContent = [
@@ -39,7 +39,7 @@ const WhyParticipateLayout = () => {
       <p className="text-white text-5xl font-bold font-mono">
         WHY PARTICIPATE IN
       </p>
-      <p className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 text-7xl font-mono">
+      <p className="font-bold bg-gradient-to-r from-red-600 to-red-400 text-transparent bg-clip-text  text-7xl font-mono">
         HACKATHON
       </p>
       <div className="w-3/4 flex justify-between items-center flex-wrap">
