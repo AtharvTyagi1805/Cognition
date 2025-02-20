@@ -1,2 +1,3 @@
-# Build Wow
-Website for BuildWOW Hackathon event
+# Cognition
+
+Website for Cognition event
