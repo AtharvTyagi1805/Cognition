@@ -29,7 +29,7 @@ export default function Navbar({ scrollToSection }) {
       >
         <a
           className="font-bold font-mont hover:text-yellow-300 transition"
-          href="/"
+          href="https://www.theace.tech/"
         >
           HOME
         </a>

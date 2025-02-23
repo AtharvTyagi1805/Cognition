@@ -72,7 +72,7 @@ export default function Footer({ scrollToSection }) {
     <footer className="bg-[#0f0f0f] relative z-20 text-white flex flex-col text-center items-center justify-center px-4 py-10">
       <div className="absolute -top-14 left-1/2 transform -translate-x-1/2 w-[80%] max-w-4xl bg-gradient-to-r from-yellow-400 to-yellow-700 py-4 px-6 rounded-xl shadow-lg text-black text-center">
         <h2 className="text-lg font-thin font-poppins md:text-5xl">
-          CHASE IT UNTLI YOU ACE IT
+          CHASE IT UNTIL YOU ACE IT
         </h2>
         <button
           className="mt-2 font-poppins bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-black transition"
@@ -85,7 +85,7 @@ export default function Footer({ scrollToSection }) {
       <img src="./logo1.png" alt="Ace" className="h-16 mt-16" />
       <div className="flex flex-col md:flex-row gap-4 mt-4">
         <a
-          href="/"
+          href="https://www.theace.tech/"
           className="font-bold font-mont hover:text-yellow-300 transition"
         >
           HOME
