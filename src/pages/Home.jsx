@@ -1,12 +1,27 @@
 import React, { useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
-import Words from "../components/Words";
 import Cognition from "../components/Cognition";
 import Widget from "../components/Widget";
 import Footer from "../components/Footer";
 import SponsorForm from "../components/SponsorForm";
 
 export default function Home() {
+  const aboutRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (section) => {
+    console.log("Scrolling to:", section);
+    console.log("aboutRef:", aboutRef.current);
+    console.log("contactRef:", contactRef.current);
+
+    if (section === "about" && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (section === "contact" && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -22,7 +37,6 @@ export default function Home() {
     document.body.style.cursor = "none";
 
     let particles = [];
-    let isOnFrame = false;
 
     class Particle {
       constructor(x, y, color) {
@@ -48,24 +62,9 @@ export default function Home() {
       }
     }
 
-    const checkIfOnFrame = (x, y) => {
-      const frames = document.querySelectorAll(".photo-frame");
-      return Array.from(frames).some((frame) => {
-        const rect = frame.getBoundingClientRect();
-        return (
-          x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom
-        );
-      });
-    };
-
     const animateParticles = (e) => {
-      isOnFrame = checkIfOnFrame(e.clientX, e.clientY);
       particles.push(
-        new Particle(
-          e.clientX,
-          e.clientY,
-          isOnFrame ? "black" : "rgba(255, 223, 0, 0.8)"
-        )
+        new Particle(e.clientX, e.clientY, "rgba(255, 223, 0, 0.8)")
       );
     };
 
@@ -96,18 +95,47 @@ export default function Home() {
   return (
     <>
       <title>Cognition</title>
-      <main className="min-h-screen overflow-hidden relative pt-20 bg-black text-white">
-        <Navbar />
+      <div className="fixed top-0 left-0 w-full h-full bg-black z-[-3]"></div>
+      <div className="fixed top-0 left-0 w-full z-50">
+        <Navbar scrollToSection={scrollToSection} />
+      </div>
+      {/* <div className="relative z-20 pt-20">
         <Words />
-        <Cognition />
-        <Widget />
-        <SponsorForm />
-        <Footer />
-        <canvas
-          ref={canvasRef}
+      </div> */}
+      <div className="relative z-10">
+        <div
           className="absolute top-0 left-0 w-full h-full"
-        />
-      </main>
+          style={{
+            backgroundImage: "url('/uncle_ace1.png')",
+            backgroundSize: "57%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            zIndex: "-2",
+            opacity: 1,
+            position: "fixed",
+          }}
+        >
+          <style>
+            {`
+          @media (max-width: 1024px) {
+            div[style] { background-size: 75% !important; }
+          }
+          @media (max-width: 768px) {
+            div[style] { background-size: cover !important; }
+          }
+        `}
+          </style>
+        </div>
+        <Cognition />
+        <div ref={aboutRef}>
+          <Widget />
+        </div>
+        <div ref={contactRef}>
+          <SponsorForm />
+        </div>
+      </div>
+      <Footer scrollToSection={scrollToSection} />
+      <canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full" />
     </>
   );
 }
