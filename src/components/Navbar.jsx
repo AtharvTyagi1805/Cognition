@@ -44,7 +44,7 @@ export default function Navbar({ scrollToSection }) {
         </button>
         <a
           className="font-bold font-mont hover:text-yellow-300 transition"
-          href="/cognition"
+          href="/"
         >
           EVENT
         </a>

@@ -97,7 +97,7 @@ export default function Footer({ scrollToSection }) {
           ABOUT
         </button>
         <a
-          href="/cognition"
+          href="/"
           className="font-bold font-mont hover:text-yellow-300 transition"
         >
           EVENT
@@ -117,7 +117,7 @@ export default function Footer({ scrollToSection }) {
       </div>
 
       <div className="flex gap-4 mt-4">
-        <a href="/cognition" className="hover:text-yellow-300 transition">
+        <a href="/" className="hover:text-yellow-300 transition">
           <FontAwesomeIcon icon={faEnvelope} size="xl" />
         </a>
         <a
