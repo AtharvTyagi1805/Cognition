@@ -64,7 +64,7 @@ export default function Cognition() {
             className="mt-6 inline-block bg-white text-yellow-600 hover:bg-gradient-to-r hover:from-yellow-500 hover:to-yellow-800 hover:text-white px-5 py-3 rounded-lg text-sm md:text-lg font-bold transition-colors duration-500 hover:shadow-lg"
             href="https://forms.gle/zTYsrLw2VwotBF367"
           >
-            Call for Registration <br />
+            Call for Registration
 {/*             <span className="text-sm text-gray-600 text-center hover:text-black">
               (COMING SOON)
             </span> */}
